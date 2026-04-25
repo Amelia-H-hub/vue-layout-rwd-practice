@@ -1,10 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="planContainer">
+  <div id="plans" class="planContainer">
     <img src="@/assets/images/插畫_電線桿.svg" class="utilityPole" />
     <img src="@/assets/images/插畫_小貓.svg" class="cat" />
-    <div class="planContainer__title"><p>計畫概述</p></div>
+    <div class="planContainer__title">
+      <p>計畫概述</p>
+    </div>
     <div class="planContainer__content">
       <div class="planContainer__content--card">
         <p class="planContainer__content--card--title">
@@ -32,13 +34,16 @@
   padding-right: 28px;
   padding-top: 40px;
   box-sizing: border-box;
+  scroll-margin-top: 47px;
 
   @include mq('tablet') {
     padding-top: 58px;
+    scroll-margin-top: 58px;
   }
 
   @include mq('desktop') {
     padding-top: 64px;
+    scroll-margin-top: 70px;
   }
 
   &__title {

@@ -92,7 +92,7 @@ onMounted(async () => {
     scroll-margin-top: 58px;
   }
 
-  @include mq('desktop-s') {
+  @include mq('desktop') {
     scroll-margin-top: 70px;
   }
 
