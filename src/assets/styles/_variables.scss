@@ -1,0 +1,25 @@
+@use 'sass:map';
+
+$main-font: 'CustomJf', 'CustomNotoSansTC';
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 40px;
+$default-color: #333333;
+$system-green: #435e44;
+$breakpoints: (
+  'mobile-l': 425px,
+  'tablet-s': 604px,
+  'tablet': 780px,
+  'tablet-l': 880px,
+  'desktop-s': 1024px,
+  'desktop': 1280px,
+  'desktop-l': 1440px,
+);
+
+@mixin mq($size) {
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}

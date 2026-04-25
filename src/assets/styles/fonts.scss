@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'CustomJf';
+  src:
+    url('../fonts/jf-openhuninn/jf-openhuninn-1.1.woff2') format('woff2'),
+    url('../fonts/jf-openhuninn/jf-openhuninn-1.1.woff') format('woff'),
+    url('../fonts/jf-openhuninn/jf-openhuninn-1.1.ttf') format('truetype'),
+    url('../fonts/jf-openhuninn/jf-openhuninn-1.1.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* 讓字型載入時不會造成文字空白 */
+}
+
+@font-face {
+  font-family: 'CustomNotoSansTC';
+  src:
+    url('../fonts/NotoSansTC/NotoSansTC-Regular.woff2') format('woff2'),
+    url('../fonts/NotoSansTC/NotoSansTC-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-size: normal;
+  font-display: swap;
+}

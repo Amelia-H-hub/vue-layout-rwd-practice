@@ -1,0 +1,78 @@
+{
+  "news": [
+    {
+      "id": "F5B991E4-E387-4F59-B128-19CC722FCED2",
+      "categoryId": "06",
+      "categoryName": "發表會公告",
+      "title": "來為你的地方發聲「獎勵地方青年投入地方創生行動」徵件說明會3/1起正式開跑！",
+      "publishDate": "2023/07/31",
+      "isPinned": true
+    },
+    {
+      "id": "768E78A5-FAB6-4807-A480-19D68F7A32F3",
+      "categoryId": "02",
+      "categoryName": "課程公告",
+      "title": "4月16至18日「2022地方創生論壇暨成果展」歡迎逗陣來！",
+      "publishDate": "2023/03/21",
+      "isPinned": true
+    },
+    {
+      "id": "66AE1AA8-F03F-49C5-9412-2EE8DE389597",
+      "categoryId": "03",
+      "categoryName": "參訪公告",
+      "title": "本會地方創生分區輔導中心聯絡方式",
+      "publishDate": "2023/03/14",
+      "isPinned": true
+    },
+    {
+      "id": "F4E62687-FABA-42E9-9510-3503A5B6D910",
+      "categoryId": "04",
+      "categoryName": "媒合活動",
+      "title": "來為你的地方發聲「獎勵地方青年投入地方創生行動」徵件說明會3/1起正式開跑！",
+      "publishDate": "2023/09/30",
+      "isPinned": false
+    },
+    {
+      "id": "41170FC5-26F4-49E1-9B05-4E59C2B2FE10",
+      "categoryId": "05",
+      "categoryName": "市集公告",
+      "title": "4月16至18日「2022地方創生論壇暨成果展」歡迎逗陣來！",
+      "publishDate": "2023/08/09",
+      "isPinned": false
+    },
+    {
+      "id": "ADCE3EFB-6EB9-43C3-814E-650B8881718A",
+      "categoryId": "01",
+      "categoryName": "重要公告",
+      "title": "本會地方創生分區輔導中心聯絡方式",
+      "publishDate": "2023/03/22",
+      "isPinned": false
+    }
+  ],
+  "newsCategories": [
+    {
+      "id": "01",
+      "name": "重要公告"
+    },
+    {
+      "id": "02",
+      "name": "課程公告"
+    },
+    {
+      "id": "03",
+      "name": "參訪公告"
+    },
+    {
+      "id": "04",
+      "name": "媒合活動"
+    },
+    {
+      "id": "05",
+      "name": "市集公告"
+    },
+    {
+      "id": "06",
+      "name": "發表會公告"
+    }
+  ]
+}

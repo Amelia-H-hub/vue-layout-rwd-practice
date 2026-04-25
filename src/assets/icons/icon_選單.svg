@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4e8960;
+      }
+    </style>
+  </defs>
+  <g id="Group_11189" data-name="Group 11189">
+    <path id="Rectangle_6033" data-name="Rectangle 6033" class="cls-1" d="m10,10.5h13c.55,0,1,.45,1,1h0c0,.55-.45,1-1,1h-13c-.55,0-1-.45-1-1h0c0-.55.45-1,1-1Z"/>
+    <path id="Rectangle_6034" data-name="Rectangle 6034" class="cls-1" d="m10,15.5h13c.55,0,1,.45,1,1h0c0,.55-.45,1-1,1h-13c-.55,0-1-.45-1-1h0c0-.55.45-1,1-1Z"/>
+    <path id="Rectangle_6035" data-name="Rectangle 6035" class="cls-1" d="m10,20.5h13c.55,0,1,.45,1,1h0c0,.55-.45,1-1,1h-13c-.55,0-1-.45-1-1h0c0-.55.45-1,1-1Z"/>
+  </g>
+</svg>
