@@ -20,22 +20,15 @@ const isShowMenu = ref<Boolean>(false);
 
 <template>
   <div class="navContainer">
+    <img src="@/assets/images/web_Banner.svg" class="navContainer__webBackground" />
+    <img src="@/assets/images/mobile_Banner.svg" class="navContainer__mobileBackground" />
     <nav class="nav" :class="{ nav__scrolled: isScrolled }">
       <div class="nav__websites">
-        <a
-          href="https://www.twrr.ndc.gov.tw/index"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav__websites--revitalization"
-        >
+        <a href="https://www.twrr.ndc.gov.tw/index" target="_blank" rel="noopener noreferrer"
+          class="nav__websites--revitalization">
           <img src="@/assets/images/logo_地方創生.svg" alt="地方創生" />
         </a>
-        <a
-          href="https://www.ndc.gov.tw/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav__websites--council"
-        >
+        <a href="https://www.ndc.gov.tw/" target="_blank" rel="noopener noreferrer" class="nav__websites--council">
           <img src="@/assets/images/logo_國家發展委員會.svg" alt="國家發展委員會" />
         </a>
       </div>
@@ -61,12 +54,33 @@ const isShowMenu = ref<Boolean>(false);
 @use 'sass:color';
 
 .navContainer {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 560px;
-  background-image: url('@/assets/images/web_Banner.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 560px;
+
+  &__webBackground {
+    display: none;
+
+    @include mq('tablet-s') {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+    }
+  }
+
+  &__mobileBackground {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    @include mq('tablet-s') {
+      display: none;
+    }
+  }
 }
 
 .nav {
@@ -91,7 +105,7 @@ const isShowMenu = ref<Boolean>(false);
     padding: 0px 30px 0px 23px;
   }
 
-  @include mq('desktop-s') {
+  @include mq('desktop') {
     height: 70px;
     padding: 0px 40px 0px 32px;
   }
