@@ -47,56 +47,58 @@ const downloads = [
     <div class="proposalContainer__title">
       <p class="proposalContainer__title--text">提案與徵件</p>
     </div>
-    <div class="proposalContainer__actions">
-      <div class="proposalContainer__actions--card">
-        <div class="proposalContainer__actions--card--header">
-          <p>徵件說明會</p>
-          <a href="https://tier.surveycake.biz/s/8R06a" target="blank" rel="noopener noreferrer">
-            點此報名
-          </a>
+    <div class="proposalContainer__main">
+      <div class="actions">
+        <div class="actions__card">
+          <div class="actions__card--header">
+            <p>徵件說明會</p>
+            <a href="https://tier.surveycake.biz/s/8R06a" target="blank" rel="noopener noreferrer">
+              點此報名
+            </a>
+          </div>
+          <div class="scheduleContainer">
+            <div v-for="item in schedule" :key="item.location" class="scheduleContainer__schedule">
+              <p class="scheduleContainer__schedule--location">{{ item.location }}</p>
+              <p class="scheduleContainer__schedule--time">{{ item.time }}</p>
+            </div>
+          </div>
         </div>
-        <div class="scheduleContainer">
-          <div v-for="item in schedule" :key="item.location" class="scheduleContainer__schedule">
-            <p class="scheduleContainer__schedule--location">{{ item.location }}</p>
-            <p class="scheduleContainer__schedule--time">{{ item.time }}</p>
+        <div class="actions__card">
+          <div class="actions__card--header">
+            <p>提案</p>
+            <a href="https://tier.surveycake.biz/s/7Rw6n" target="blank" rel="noopener noreferrer">
+              點此提案
+            </a>
+          </div>
+          <div class="proposalItem">
+            <div class="proposalItem__content">
+              <p>提案系統將於 113年3月31日 (五) 15:00 關閉，請把握時間上傳</p>
+            </div>
+            <div class="proposalItem__image">
+              <img src="@/assets/images/插畫_提案.svg" />
+            </div>
           </div>
         </div>
       </div>
-      <div class="proposalContainer__actions--card">
-        <div class="proposalContainer__actions--card--header">
-          <p>提案</p>
-          <a href="https://tier.surveycake.biz/s/7Rw6n" target="blank" rel="noopener noreferrer">
-            點此提案
-          </a>
-        </div>
-        <div class="proposalItem">
-          <div class="proposalItem__content">
-            <p>提案系統將於 113年3月31日 (五) 15:00 關閉，請把握時間上傳</p>
-          </div>
-          <div class="proposalItem__image">
-            <img src="@/assets/images/插畫_提案.svg" />
-          </div>
+      <div class="process">
+        <p>徵件流程</p>
+        <div class="process__image">
+          <img src="@/assets/images/web_chart.svg" class="process__image--web" />
+          <img src="@/assets/images/mobile_chart.svg" class="process__image--mobile" />
         </div>
       </div>
-    </div>
-    <div class="proposalContainer__process">
-      <p>徵件流程</p>
-      <div class="proposalContainer__process--image">
-        <img src="@/assets/images/web_chart.svg" class="proposalContainer__process--image--web" />
-        <img src="@/assets/images/mobile_chart.svg" class="proposalContainer__process--image--mobile" />
-      </div>
-    </div>
-    <div class="proposalContainer__reference">
-      <p class="proposalContainer__reference--text">徵件須知與計畫書格式</p>
-      <div class="downloadsContainer">
-        <div v-for="downloadItem in downloads" :key="downloadItem.name" class="downloadsContainer__download">
-          <div class="downloadsContainer__download--content">
-            <p class="downloadsContainer__download--content--name">{{ downloadItem.name }}</p>
-            <p class="downloadsContainer__download--content--notes">{{ downloadItem.notes }}</p>
+      <div class="reference">
+        <p class="reference__text">徵件須知與計畫書格式</p>
+        <div class="downloadsContainer">
+          <div v-for="downloadItem in downloads" :key="downloadItem.name" class="downloadsContainer__download">
+            <div class="downloadsContainer__download--content">
+              <p class="downloadsContainer__download--content--name">{{ downloadItem.name }}</p>
+              <p class="downloadsContainer__download--content--notes">{{ downloadItem.notes }}</p>
+            </div>
+            <a :href="downloadItem.href" target="_blank" rel="noopener noreferrer">
+              下載
+            </a>
           </div>
-          <a :href="downloadItem.href" target="_blank" rel="noopener noreferrer">
-            下載
-          </a>
         </div>
       </div>
     </div>
@@ -139,10 +141,18 @@ const downloads = [
     &--text {
       position: relative;
       font-family: CustomJf;
-      font-size: $font-size-xxl;
+      font-size: 28px;
       line-height: 51px;
       color: $system-green;
       padding-bottom: 19px;
+
+      @include mq('tablet') {
+        font-size: 34px;
+      }
+
+      @include mq('desktop') {
+        font-size: $font-size-xxl;
+      }
 
       &::after {
         content: '';
@@ -157,112 +167,75 @@ const downloads = [
     }
   }
 
-  &__actions {
+  &__main {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 
-    &--card {
-      position: relative;
+    @include mq('desktop-s') {
+      width: calc(1200 / 1920 * 100%);
+      min-width: 950px;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
+  width: 100%;
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    background-color: #ffffff;
+    padding: 47px 33px 37.5px 40px;
+    box-sizing: border-box;
+    flex: 1 1 100%;
+
+    @include mq('tablet-l') {
+      flex: 1 1 calc(50% - 10px);
+    }
+
+    &--header {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 28px;
-      background-color: #ffffff;
-      padding: 47px 33px 37.5px 40px;
-      box-sizing: border-box;
-      flex: 1 1 100%;
+      width: 100%;
 
-      @include mq('tablet-l') {
-        flex: 1 1 calc(50% - 10px);
-      }
+      p {
+        font-family: 'CustomJf';
+        font-size: 24px;
+        line-height: 40px;
 
-      &--header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+        @include mq('tablet') {
+          font-size: 28px;
+        }
 
-        p {
-          font-family: 'CustomJf';
+        @include mq('desktop') {
           font-size: 32px;
-          line-height: 40px;
-        }
-
-        a {
-          color: $system-green;
-          text-decoration: none;
-          background: transparent;
-          border: 1px solid $system-green;
-          border-radius: 25px;
-          padding: 14px 32px;
-
-          &:hover {
-            background-color: #4e8960;
-            color: #ffffff;
-          }
-        }
-      }
-    }
-  }
-
-  &__process {
-    width: 100%;
-    max-width: 956px;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 47px 33px 37.5px 40px;
-    box-sizing: border-box;
-
-    p {
-      font-family: 'CustomJf';
-      font-size: 32px;
-      line-height: 40px;
-    }
-
-    &--image {
-      display: flex;
-      justify-content: center;
-      margin-top: 28px;
-      padding-bottom: 50px;
-      border-bottom: 1px solid #7fa482;
-
-      &--web {
-        display: none;
-        width: 100%;
-
-        @include mq('tablet') {
-          display: inline-block;
-          width: 100%;
         }
       }
 
-      &--mobile {
-        display: block;
-        width: 100%;
+      a {
+        color: $system-green;
+        text-decoration: none;
+        background: transparent;
+        border: 1px solid $system-green;
+        border-radius: 25px;
+        padding: 14px 32px;
 
-        @include mq('tablet') {
-          display: none;
+        &:hover {
+          background-color: #4e8960;
+          color: #ffffff;
         }
       }
-    }
-  }
-
-  &__reference {
-    width: 100%;
-    max-width: 956px;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 47px 33px 37.5px 40px;
-    box-sizing: border-box;
-
-    &--text {
-      font-family: 'CustomJf';
-      font-size: 32px;
-      line-height: 40px;
     }
   }
 }
@@ -296,7 +269,6 @@ const downloads = [
 }
 
 .proposalItem {
-  // position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -328,50 +300,141 @@ const downloads = [
   }
 }
 
+.process {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 47px 33px 37.5px 40px;
+  box-sizing: border-box;
+
+  p {
+    font-family: 'CustomJf';
+    font-size: 32px;
+    line-height: 40px;
+
+    @include mq('tablet') {
+      font-size: 28px;
+    }
+
+    @include mq('desktop') {
+      font-size: 32px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+    padding-bottom: 0px;
+    border-bottom: none;
+
+    @include mq('tablet') {
+      padding-bottom: 53.5px;
+      border-bottom: 1px solid #7fa482;
+    }
+
+    &--web {
+      display: none;
+      width: 100%;
+
+      @include mq('tablet') {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+
+    &--mobile {
+      display: block;
+      width: 100%;
+
+      @include mq('tablet') {
+        display: none;
+      }
+    }
+  }
+}
+
+.reference {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 47px 33px 37.5px 40px;
+  box-sizing: border-box;
+
+  &__text {
+    font-family: 'CustomJf';
+    font-size: 32px;
+    line-height: 40px;
+
+    @include mq('tablet') {
+      font-size: 28px;
+    }
+
+    @include mq('desktop') {
+      font-size: 32px;
+    }
+  }
+}
+
 .downloadsContainer {
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 36px;
+  width: 100%;
 
   &__download {
     border-bottom: 1px solid #7fa482;
-    padding-bottom: 19px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
     flex: 1 1 100%;
+    padding: 28px 8px;
+    box-sizing: border-box;
 
     @include mq('tablet') {
       flex: 0 1 calc(50% - 18px);
+      flex-wrap: nowrap;
     }
 
     &--content {
       display: flex;
       flex-direction: column;
+      flex: 1 1 auto;
+      min-width: 0;
+
+      @include mq('tablet') {
+        flex: 0 1 auto;
+      }
 
       &--name {
         font-family: 'CustomNotoSansTC';
         font-size: $font-size-l;
         line-height: 28px;
-        color: #939393;
       }
 
       &--notes {
         font-family: 'CustomNotoSansTC';
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #8B8B8B;
       }
     }
 
     a {
+      flex-shrink: 0;
       color: $system-green;
       text-decoration: none;
       background: transparent;
       border: 1px solid $system-green;
       border-radius: 25px;
       padding: 14px 32px;
-      min-width: 38px;
+      width: 38px;
+      margin-left: auto;
 
       &:hover {
         background-color: #4e8960;
