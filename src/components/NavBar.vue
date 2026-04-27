@@ -172,7 +172,7 @@ const isShowMenu = ref<Boolean>(false);
 
   &__menuIcon {
     display: block;
-    height: calc((17 / 47) * 100%);
+    height: calc((32 / 47) * 100%);
     width: auto;
     flex-shrink: 0;
     cursor: pointer;
