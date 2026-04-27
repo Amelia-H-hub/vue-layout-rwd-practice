@@ -14,7 +14,7 @@ interface NewsItem {
 
 const news = ref<NewsItem[]>([]);
 
-const getCategoryStyle = (id: string): CSSProperties => {
+const getCategoryStyle = (categoryId: string): CSSProperties => {
   let color = '#333333';
 
   const styleMap: Record<string, string> = {
@@ -26,7 +26,7 @@ const getCategoryStyle = (id: string): CSSProperties => {
     '06': '#C6790D',
   };
 
-  color = styleMap[id] || '#333333';
+  color = styleMap[categoryId] || '#333333';
 
   return {
     color: color,
@@ -46,7 +46,6 @@ const getCategoryStyle = (id: string): CSSProperties => {
 onMounted(async () => {
   try {
     const response = await axios.get('/data/最新消息資料.json');
-    console.log(response.data);
     news.value = response.data.news;
   } catch (error) {
     console.error('取得最新資料失敗', error);
