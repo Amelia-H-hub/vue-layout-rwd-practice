@@ -19,32 +19,34 @@ const isShowMenu = ref<Boolean>(false);
 </script>
 
 <template>
-  <div class="navContainer">
-    <img src="@/assets/images/web_Banner.svg" class="navContainer__webBackground" />
-    <img src="@/assets/images/mobile_Banner.svg" class="navContainer__mobileBackground" />
-    <nav class="nav" :class="{ nav__scrolled: isScrolled }">
-      <div class="nav__websites">
-        <a href="https://www.twrr.ndc.gov.tw/index" target="_blank" rel="noopener noreferrer"
-          class="nav__websites--revitalization">
-          <img src="@/assets/images/logo_地方創生.svg" alt="地方創生" />
-        </a>
-        <a href="https://www.ndc.gov.tw/" target="_blank" rel="noopener noreferrer" class="nav__websites--council">
-          <img src="@/assets/images/logo_國家發展委員會.svg" alt="國家發展委員會" />
-        </a>
-      </div>
-      <div class="nav__paragraph">
-        <a v-for="item in navItmes" :key="item.id" :href="item.href">{{ item.name }}</a>
-      </div>
-      <img @click="isShowMenu = true" class="nav__menuIcon" src="@/assets/icons/icon_選單.svg" />
-    </nav>
-  </div>
-  <div v-show="isShowMenu" class="menuContainer" @touchmove.prevent>
-    <button @click="isShowMenu = false" class="menuContainer__closeBtn">
-      <img src="@/assets/icons/icon_關閉視窗.svg" />
-    </button>
-    <div class="menuContainer__menuList">
-      <div v-for="item in navItmes" :key="item.id" class="menuContainer__menuList--menuItem">
-        <a :href="item.href" @click="isShowMenu = false">{{ item.name }}</a>
+  <div>
+    <div class="navContainer">
+      <img src="@/assets/images/web_Banner.svg" class="navContainer__webBackground" />
+      <img src="@/assets/images/mobile_Banner.svg" class="navContainer__mobileBackground" />
+      <nav class="nav" :class="{ nav__scrolled: isScrolled }">
+        <div class="nav__websites">
+          <a href="https://www.twrr.ndc.gov.tw/index" target="_blank" rel="noopener noreferrer"
+            class="nav__websites--revitalization">
+            <img src="@/assets/images/logo_地方創生.svg" alt="地方創生" />
+          </a>
+          <a href="https://www.ndc.gov.tw/" target="_blank" rel="noopener noreferrer" class="nav__websites--council">
+            <img src="@/assets/images/logo_國家發展委員會.svg" alt="國家發展委員會" />
+          </a>
+        </div>
+        <div class="nav__paragraph">
+          <a v-for="item in navItmes" :key="item.id" :href="item.href">{{ item.name }}</a>
+        </div>
+        <img @click="isShowMenu = true" class="nav__menuIcon" src="@/assets/icons/icon_選單.svg" />
+      </nav>
+    </div>
+    <div v-show="isShowMenu" class="menuContainer" @touchmove.prevent>
+      <button @click="isShowMenu = false" class="menuContainer__closeBtn">
+        <img src="@/assets/icons/icon_關閉視窗.svg" />
+      </button>
+      <div class="menuContainer__menuList">
+        <div v-for="item in navItmes" :key="item.id" class="menuContainer__menuList--menuItem">
+          <a :href="item.href" @click="isShowMenu = false">{{ item.name }}</a>
+        </div>
       </div>
     </div>
   </div>
