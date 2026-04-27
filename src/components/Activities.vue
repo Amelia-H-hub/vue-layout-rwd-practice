@@ -82,9 +82,7 @@ onMounted(async () => {
 .activitiesContainer {
   width: 100%;
   background-image: url('@/assets/images/web_BG_02.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;

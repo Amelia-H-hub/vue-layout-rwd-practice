@@ -27,9 +27,7 @@
   position: relative;
   width: 100%;
   background-image: url('@/assets/images/web_BG_03.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   padding-left: 28px;
   padding-right: 28px;
   padding-top: 40px;
