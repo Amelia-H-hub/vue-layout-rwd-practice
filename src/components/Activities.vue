@@ -157,8 +157,6 @@ onMounted(async () => {
     &--card {
       background-color: #ffffff;
       flex: 1 1 100%;
-      min-width: 385px;
-
       @include mq('tablet-l') {
         min-width: 0;
         flex: 1 1 calc(50% - 23px);
