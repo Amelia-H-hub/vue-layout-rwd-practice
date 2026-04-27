@@ -57,7 +57,11 @@ const isShowMenu = ref<Boolean>(false);
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 560px;
+  min-height: none;
+
+  @include mq('tablet-s') {
+    min-height: 560px;
+  }
 
   &__webBackground {
     display: none;
