@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar.vue';
 import News from '@/components/News.vue';
 import PlanOverview from '@/components/PlanOverview.vue';
 import Proposal from '@/components/Proposal.vue';
+import Activities from '@/components/Activities.vue';
 
 const isScrolled = ref(false);
 const handleScroll = () => {
@@ -24,6 +25,7 @@ onUnmounted(() => {
     <News></News>
     <PlanOverview></PlanOverview>
     <Proposal></Proposal>
+    <Activities></Activities>
   </div>
 </template>
 
